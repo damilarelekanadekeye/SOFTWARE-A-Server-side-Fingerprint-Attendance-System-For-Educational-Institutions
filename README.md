@@ -45,3 +45,4 @@ This repository hosts a server-side Python script (`process_attendance_decryptio
    ```bash
    git clone https://github.com/damilarelekanadekeye/server-side-fingerprint-attendance-system.git
    cd server-side-fingerprint-attendance-system
+pip install pyrebase pycryptodome pandas tabulate openpyxl
