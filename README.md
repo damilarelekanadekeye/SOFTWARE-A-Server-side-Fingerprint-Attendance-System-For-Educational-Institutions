@@ -43,8 +43,8 @@ This repository hosts a server-side Python script (`process_attendance_decryptio
 
 ### 1. **Clone the Repository**:
 ```bash
-git clone https://github.com/damilarelekanadekeye/server-side-fingerprint-attendance-system.git
-cd server-side-fingerprint-attendance-system
+git clone https://github.com/damilarelekanadekeye/SOFTWARE-A-Server-side-Fingerprint-Attendance-System-For-Educational-Institutions.git
+cd SOFTWARE-A-Server-side-Fingerprint-Attendance-System-For-Educational-Institutions
 ```
 
 ### 2. **Install Dependencies**:
@@ -105,7 +105,7 @@ python src/process_attendance_decryption.py
 - Share reports with HODs via email or a shared drive.
 
 ## Data Processing Workflow
-![Data Processing Workflow](images/workflow.jpg)
+![Data Processing Workflow](images/workflow-thumb.webp)
 
 The script follows a streamlined workflow to generate reports for HODs:
 
@@ -121,13 +121,15 @@ The script follows a streamlined workflow to generate reports for HODs:
 ## Screenshots
 
 ### CSV Report
-![CSV](images/csv-report.jpg)
+![CSV for EIE510](images/EIE520-CSV.webp)
+![CSV for EIE511](images/EIE521-CSV.webp)
+![CSV for EIE512](images/EIE522-CSV.webp)
 
 ### HTML Report
-![HTML](images/html-report.jpg)
+![HTML](images/html-result.webp)
 
 ### Excel Report
-![Excel](images/excel-report.jpg)
+![Excel](images/excel-report1.webp)
 
 ## Related Project
 This server-side script is part of a larger IoT-based fingerprint attendance system. The hardware component, built with ESP32 and AS608 fingerprint sensor, captures and encrypts attendance data. Explore the embedded system at:
