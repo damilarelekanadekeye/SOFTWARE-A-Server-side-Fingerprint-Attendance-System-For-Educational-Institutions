@@ -1,5 +1,5 @@
 # Server-Side Data Processing for IoT Fingerprint Attendance System
-![Project Banner](images/banner.jpg)
+![Project Banner](images/banner.webp)
 A Python-based server-side script for processing encrypted attendance data from an IoT fingerprint system, designed for educational institutions. Integrated with Firebase Realtime Database, it decrypts AES-128 records, generates CSV, HTML, and Excel reports, and enables Heads of Department (HODs) to review attendance post-lecture. This script complements the embedded system, available at [EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions](https://github.com/damilarelekanadekeye/EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
