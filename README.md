@@ -120,6 +120,13 @@ The script follows a streamlined workflow to generate reports for HODs:
 
 ## Screenshots
 
+### Firebase RTDB Report
+![Firebase RTDB Report1](images/firebase-pic1.webp)
+![Firebase RTDB Report2](images/firebase-pic2.webp)
+![Firebase RTDB Report3](images/firebase-pic3.webp)
+![Firebase RTDB Report4](images/firebase-pic4.webp)
+![Firebase RTDB Report5](images/firebase-pic5.webp)
+
 ### CSV Report
 ![CSV for EIE510](images/EIE520-CSV.webp)
 ![CSV for EIE511](images/EIE521-CSV.webp)
@@ -162,11 +169,18 @@ server-side-fingerprint-attendance-system/
 ├── src/
 │   └── process_attendance_decryption.py # Python script with redacted credentials
 ├── images/
-│   ├── banner.jpg # Project banner (e.g., Python code or reports)
-│   ├── workflow.jpg # Data processing workflow diagram
-│   ├── csv-report.jpg # Sample CSV report screenshot
-│   ├── html-report.jpg # Sample HTML report screenshot
-│   └── excel-report.jpg # Sample Excel report screenshot
+│   ├── banner.webp # Project banner (e.g., Python code or reports)
+│   ├── workflow-thumb.webp # Data processing workflow diagram
+│   ├── firebase-pic1.webp # Sample Firebase Result screenshot
+│   ├── firebase-pic2.webp # Sample Firebase Result screenshot
+│   ├── firebase-pic3.webp # Sample Firebase Result screenshot
+│   ├── firebase-pic4.webp # Sample Firebase Result screenshot
+│   ├── firebase-pic5.webp # Sample Firebase Result screenshot
+│   ├── EIE520-CSV.webp # Sample CSV report screenshot
+│   ├── EIE521-CSV.webp # Sample CSV report screenshot
+│   ├── EIE522-CSV.webp # Sample CSV report screenshot
+│   ├── html-result.webp # Sample HTML report screenshot
+│   └── excel-report1.webp # Sample Excel report screenshot
 ├── LICENSE # MIT License file
 └── README.md # Main README
 ```
