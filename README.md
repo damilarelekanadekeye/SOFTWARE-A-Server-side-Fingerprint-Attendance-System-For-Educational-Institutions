@@ -1,7 +1,5 @@
 # Server-Side Data Processing for IoT Fingerprint Attendance System
-
 ![Project Banner](images/banner.jpg)
-
 A Python-based server-side script for processing encrypted attendance data from an IoT fingerprint system, designed for educational institutions. Integrated with Firebase Realtime Database, it decrypts AES-128 records, generates CSV, HTML, and Excel reports, and enables Heads of Department (HODs) to review attendance post-lecture. This script complements the embedded system, available at [EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions](https://github.com/damilarelekanadekeye/EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -41,12 +39,131 @@ This repository hosts a server-side Python script (`process_attendance_decryptio
 - Visual Studio Code or any Python IDE
 
 ## Setup Instructions
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/damilarelekanadekeye/server-side-fingerprint-attendance-system.git
-   cd server-side-fingerprint-attendance-system
-   ```
-2. **Install Dependencies:**
-```python
+
+### 1. **Clone the Repository**:
+```bash
+git clone https://github.com/damilarelekanadekeye/server-side-fingerprint-attendance-system.git
+cd server-side-fingerprint-attendance-system
+```
+
+### 2. **Install Dependencies**:
+```bash
 pip install pyrebase pycryptodome pandas tabulate openpyxl
+```
+
+### 3. **Configure Firebase**:
+- Create a Firebase project and enable Realtime Database.
+- Obtain your Firebase configuration (API key, database URL, etc.).
+- Update `src/process_attendance_decryption.py` with your credentials (sample below with redacted values):
+
+```python
+firebaseConfig = {
+    "apiKey": "********",
+    "authDomain": "********",
+    "databaseURL": "********",
+    "projectId": "********",
+    "storageBucket": "********",
+    "messagingSenderId": "********",
+    "appId": "********"
+}
+```
+
+### 4. **Set AES Credentials**:
+- Use the same 16-byte AES key and IV as the embedded system (redacted here for security):
+
+```python
+AES_KEY = b"********"
+AES_IV = b"********"
+```
+
+- Ensure these match the values in the embedded system repository.
+
+### 5. **Run the Script**:
+```bash
+python src/process_attendance_decryption.py
+```
+
+### 6. **Link to Embedded System**:
+- Ensure the IoT fingerprint system is operational to generate attendance data. Refer to the embedded system repository for ESP32 firmware setup.
+
+## Usage
+
+### 1. **Run Post-Lecture**:
+- Execute the script after lectures to fetch and process attendance data:
+
+```bash
+python src/process_attendance_decryption.py
+```
+
+- Reports are saved in `attendance/<className>/<date>.csv`, `attendance/attendance_report.html`, and `attendance/attendance_summary.xlsx`.
+
+### 2. **Access Reports**:
+- Open CSV files for class-specific data.
+- View `attendance_report.html` in a browser for styled tables.
+- Use `attendance_summary.xlsx` for formatted Excel reports.
+- Share reports with HODs via email or a shared drive.
+
+## Data Processing Workflow
+![Data Processing Workflow](images/workflow.jpg)
+
+The script follows a streamlined workflow to generate reports for HODs:
+
+1. **Fetch encrypted records from Firebase** (`/attendance_records/`).
+2. **Decode Base64 and decrypt using AES-128** with PKCS#7 unpadding.
+3. **Validate data; log errors for invalid records**.
+4. **Structure data into Pandas DataFrames by class and date**.
+5. **Generate CSV files in** `attendance/<className>/<date>.csv`.
+6. **Create styled HTML report** (`attendance_report.html`).
+7. **Produce formatted Excel report** (`attendance_summary.xlsx`).
+8. **Output console table for verification**.
+
+## Screenshots
+
+### CSV Report
+![CSV](images/csv-report.jpg)
+
+### HTML Report
+![HTML](images/html-report.jpg)
+
+### Excel Report
+![Excel](images/excel-report.jpg)
+
+## Related Project
+This server-side script is part of a larger IoT-based fingerprint attendance system. The hardware component, built with ESP32 and AS608 fingerprint sensor, captures and encrypts attendance data. Explore the embedded system at:
+
+- [EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions](https://github.com/damilarelekanadekeye/EMBEDDED-An-IoT-Based-Fingerprint-Attendance-System-for-Educational-Institutions)
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+- **Author**: Damilare Lekan Adekeye
+- **Portfolio**: [your-portfolio.com](https://your-portfolio.com)
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **GitHub**: [damilarelekanadekeye](https://github.com/damilarelekanadekeye)
+
+---
+Built with ❤️ for educational efficiency.
+
+## Repository Structure
+```
+server-side-fingerprint-attendance-system/
+├── src/
+│   └── process_attendance_decryption.py # Python script with redacted credentials
+├── images/
+│   ├── banner.jpg # Project banner (e.g., Python code or reports)
+│   ├── workflow.jpg # Data processing workflow diagram
+│   ├── csv-report.jpg # Sample CSV report screenshot
+│   ├── html-report.jpg # Sample HTML report screenshot
+│   └── excel-report.jpg # Sample Excel report screenshot
+├── LICENSE # MIT License file
+└── README.md # Main README
 ```
